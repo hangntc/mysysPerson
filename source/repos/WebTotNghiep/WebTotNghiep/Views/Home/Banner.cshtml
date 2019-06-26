@@ -1,0 +1,51 @@
+﻿
+
+@{
+    ViewBag.Title = "Banner";
+}
+<head>
+    <link href="~/Content/Site.css" rel="stylesheet" />
+</head>
+<body>
+    
+    <div id="carouselExampleInterval" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-interval="7000">
+                <img src="~/img/banner/slide-5.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-interval="7000">
+                <img src="~/img/banner/slide-6.jpg" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item" data-interval="7000">
+                <img src="~/img/banner/slide-7.jpg" class="d-block w-100" alt="...">
+            </div>
+        </div>
+        <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+        </a>
+    </div>
+    
+    <br>
+
+    <!-- The dots/circles -->
+    <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+        @*<span class="dot" onclick="currentSlide(5)"></span>
+            <span class="dot" onclick="currentSlide(6)"></span>
+            <span class="dot" onclick="currentSlide(7)"></span>
+            <span class="dot" onclick="currentSlide(8)"></span>*@
+    </div>
+    <script>
+        $('.carousel').carousel({
+            interval: 5000
+        })
+    </script>
+</body>

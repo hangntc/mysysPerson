@@ -1,0 +1,119 @@
+﻿@using WebTotNghiep.Models
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>CamHang</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src=" http://example.com/foobar/fonts/glyphicons-halflings-regular.woff"></script>
+
+    <link href="~/Content/Site.css" rel="stylesheet" />
+    <link href="~/Content/CSS/Stype.css" rel="stylesheet" />
+    <style>
+    </style>
+</head>
+
+<body>
+    <div id="navbar">
+        <a href="#default" id="logo">CamHang</a>
+        <div id="navbar-right">
+
+            <a href="@Url.Action("Index","Cart")">
+
+                <img style="width:60px" src="~/img/logo/shopping-cart.png" />
+                @{
+                    var giohang = (List<GioHang>)Session["giohang"];
+                    if (giohang != null)
+                    {
+                        <span class="badge">@giohang.Count</span>
+                    }
+                    else
+                    {
+                        <span style="height:30px">0</span>
+                    }
+                }
+            </a>
+
+            @if (Session["Tentruycap"] != null)
+            {
+
+                <a class="active"> @Session["Tentruycap"].ToString()</a>
+                <a href="~/Account/Logout">Logout</a>
+
+            }
+            else
+            {
+
+                <a> @Html.ActionLink("Login", "Login", "Account")</a>
+                <a> @Html.ActionLink("Register", "Register", "Account")</a>
+
+            }
+                <a>@Html.ActionLink("Home", "Index", "Home")</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+            <a href="~/Admin/Default/LoginAd">Administrators </a>
+
+        </div>
+        @using (Html.BeginForm("Find", "Product", FormMethod.Post))
+        {
+            <div id="searchbox">
+                <input id="txtTimKiem" name="txtTimKiem" type="text" size="15" placeholder="Enter the content to search...." />
+                <input id="button-submit" type="submit" value="Search" />
+            </div>
+        }
+
+        <div>
+            <!-- Default dropright button -->
+            <div class="btn-group dropright">
+                <button type="button" class="btn btn-secondary dropdown-toggle btn1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Men</button>
+                <div class="dropdown-menu">
+                    <!-- Dropdown menu links -->
+                </div>
+            </div>
+
+            <div class="btn-group dropright ">
+                <button type="button" class="btn btn-secondary  dropdown-toggle btn1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Woman</button>
+                <div class="dropdown-menu">
+                    <div>giày converse</div>
+                    <div>áo converse</div>
+                </div>
+            </div>
+            <div class="btn-group dropright ">
+                <button type="button" class="btn btn-secondary dropdown-toggle btn1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Kids</button>
+                <div class="dropdown-menu">
+                    <div>giày adidas</div>
+                    <div>áo adidas</div>
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+    <div>@RenderBody()</div>
+
+
+    <script>$('.dropdown-toggle').dropdown()</script>
+    <script>
+        // When the user scrolls down 80px from the top of the document, resize the navbar's padding and the logo's font size
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+                document.getElementById("navbar").style.padding = "30px 10px";
+                document.getElementById("logo").style.fontSize = "25px";
+            } else {
+                document.getElementById("navbar").style.padding = "80px 10px";
+                document.getElementById("logo").style.fontSize = "35px";
+            }
+        }
+    </script>
+
+</body>
+</html>

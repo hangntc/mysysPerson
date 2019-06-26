@@ -1,0 +1,10 @@
+﻿note:
+1.Xóa nhiều dòng khi check vào ô checkbox, thêm sản phẩm (kèm uploadfile hình , phần mô tả (này e làm ckeditor và ckfinder ) -> chua làm được(-> admin->sanpham)
+2. Thêm vào tính năng comment sản phẩm , và trả lời tin nhắn tự động khi khách hàng inbox.
+
+server là API, client là WebTotNghiep
+trong quá trình làm có gì note ra giúp e 
+
+
+( ... )
+bí quá, làm có mình ko ai huớng dẫn , thầy huớng dẫn thì bên mạng máy tính ko hiểu về web  , hết tuần này chấm điểm rồi , cíu với

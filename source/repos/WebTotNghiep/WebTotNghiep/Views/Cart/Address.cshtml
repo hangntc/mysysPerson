@@ -1,0 +1,85 @@
+﻿@model WebTotNghiep.Models.KhachHang
+
+@{
+    ViewBag.Title = "Address";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("AddAddress", "Cart", FormMethod.Post))
+{
+    <div class="progress_tab">
+        <div class="_progress-bar">
+            <ul class="step-breadcrumb _list">
+                <li class="step-breadcrumb _item ">
+                    <span class="step-breadcrumb _text">1. Đăng nhập</span>
+                </li>
+                <li class="step-breadcrumb _item -current">
+                    <span class="step-breadcrumb _text">2. Địa chỉ</span>
+                </li>
+                <li class="step-breadcrumb _item">
+                    <span class="step-breadcrumb _text">3. Thanh Toán</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="LoginLayout">
+
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8" style="padding-top:30px">
+                <div class="input-group">
+                    <span class="input-group-btn glyphicon glyphicon-calendar">
+                    </span>
+                    @Html.TextBox("txtNgayGiaoHang", DateTime.Now.AddDays(3).ToShortDateString(), new { @class = "form-control", placeholder = "Ngày giao hàng" })
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+        </div>
+
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="input-group">
+                    <span class="input-group-btn glyphicon glyphicon-pencil">
+                    </span>
+                    @Html.TextArea("txtYeuCau", null, new { @class = "form-control", placeholder = "Yêu cầu của khách hàng" })
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+        </div>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="input-group">
+                    <span class="input-group-btn glyphicon glyphicon-user">
+                    </span>
+                    @Html.TextBoxFor(model => model.Tenkhachhang, new { @class = "form-control" })
+                    @*@Html.TextBox("txtTenNguoiNhan", null, new { @class = "form-control", placeholder = "Tên người nhận" })*@
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+        </div>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="input-group">
+                    <span class="input-group-btn glyphicon glyphicon-phone-alt">
+                    </span>
+                    @Html.TextBoxFor(model => model.Dienthoai, new { @class = "form-control" })
+                    @*@Html.TextBox("txtDienThoai", null, new { @class = "form-control", placeholder = "Điện thoại" })*@
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+        </div>
+        <div class="row">
+            <div class="col-md-offset-2 col-md-8">
+                <div class="input-group">
+                    <span class="input-group-btn glyphicon glyphicon-home">
+                    </span>
+                    @Html.TextBoxFor(model => model.Diachi, new { @class = "form-control" })
+                    @*@Html.TextArea("txtDiaChi", null, new { @class = "form-control", placeholder = "Địa Chỉ" })*@
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+        </div>
+        <div class="row">
+            <div class="col-md-offset-5 col-md-8">
+                <div class="input-group" style="padding-top:10px">
+                    <input type="submit" value="Thanh toán" class="btn btn-primary" />
+                </div><!-- /input-group -->
+            </div><!-- /.col-lg-6 -->
+        </div>
+    </div>
+}
+

@@ -1,0 +1,54 @@
+﻿@model IEnumerable<WebTotNghiep.Models.Sanpham>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="~/Content/CSS/ProductHot_Find.css" rel="stylesheet" />
+    <style>    
+    </style>
+</head>
+<body>
+    <div class="divsp">
+        <h1 class="h1">Popular Product</h1>
+        <div class="row">
+            @{
+                if (ViewBag.thongbao != null)
+                {
+                    <div class="alert alert-warning" role="alert">
+                        <span class="glyphicon glyphicon-exclamation-sign">
+                            @ViewBag.thongbao
+                        </span>
+
+                    </div>
+                }
+                else
+                {
+                    <div class="row">
+                        @{
+                            foreach (var item in Model)
+                            {
+                                <div class="col">
+                                    <div class="container">
+                                        <img src="@item.HinhAnh" height="100" width="200" alt="Avatar" class="image" style="width:100%" />
+                                        <div class="middle">
+                                            <div class="text">
+                                                <p>@Html.ActionLink(item.Ten, "DetailProduct", "Product", new { id = item.id }, null)</p>
+                                                <p class="gachgia"> @item.GiaCu ₫</p>
+                                                <h4 style="color:#ff0000"> @item.GiaMoi ₫</h4>
+                                                <p>
+                                                    @Html.ActionLink("Thêm vào giỏ hàng", "ThemGioHang", "Cart", new { id = item.id }, new { @class = "btn btn-success", @role = "button" })
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                 }
+        }
+        </div>
+     </div>
+</body>
+</html>
+

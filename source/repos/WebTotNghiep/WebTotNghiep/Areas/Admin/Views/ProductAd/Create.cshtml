@@ -1,0 +1,136 @@
+﻿@model WebTotNghiep.Models.Sanpham
+@{
+    Layout = "~/Areas/Admin/Views/Shared/Layout_admin.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+    <script src="~/Content/jquery-1.11.3.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="~/Areas/Admin/content/ckeditor/ckeditor.js"></script>
+    <script src="~/Areas/Admin/content/ckfinder/ckfinder_v1.js"></script>
+    <script src="~/Areas/Admin/content/ckfinder/ckfinder.js"></script>
+    <script src="~/Areas/Admin/content/ckeditor/adapters/jquery.js"></script>
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>Sanpham</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Ten, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Ten, new { htmlAttributes = new { @class = "form-cont rol" } })
+                @Html.ValidationMessageFor(model => model.Ten, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Model, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Model, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Model, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.MotaNgan, new { htmlAttributes = new { @class = "form-control" } })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.MotaNgan, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.MotaNgan, "", new { @class = "text-danger" })
+            </div>
+            <script type="text/javascript">
+                CKEDITOR.replace("MotaNgan");
+            </script>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TSKyThuat, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.TSKyThuat, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.TSKyThuat, "", new { @class = "text-danger" })
+            </div>
+            <script type="text/javascript">
+                CKEDITOR.replace("TSKyThuat");
+            </script>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Tukhoa, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Tukhoa, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Tukhoa, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.GiaCu, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.GiaCu, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.GiaCu, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.GiaMoi, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.GiaMoi, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.GiaMoi, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.HinhAnh, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.HinhAnh, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.HinhAnh, "", new { @class = "text-danger" })
+            </div>
+            <div class="col-md-1">
+                <input type="button" id="browse" value="Chọn file" class="btn btn-default" />
+            </div>
+            <script>
+                $("#browse").click(function () {
+                    var finder = new CKFinder();
+                    finder.selectActionFunction = function (fileUrl) {
+                        // fileUrl = fileUrl.substring(fileUrl.lastIndexOf("/") + 1);
+                        $("#HinhAnh").val(fileUrl);
+                    }
+                    finder.popup();
+                });
+
+            </script>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.TieuBieu, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.TieuBieu)
+                    @Html.ValidationMessageFor(model => model.TieuBieu, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+    }
+
+    <div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>
+</body>
+</html>

@@ -1,0 +1,82 @@
+﻿
+@{
+    ViewBag.Title = "Pay";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    if (Session["ms"] != null)
+    {
+        <div class="alert alert-warning" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign">
+                @Session["ms"].ToString()
+            </span>
+
+        </div>
+    }
+}
+<head>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src=" http://example.com/foobar/fonts/glyphicons-halflings-regular.woff"></script>
+    <link href="~/signin.css" rel="stylesheet" />
+    <style>
+        .margin {
+            margin-top: 300px;
+        }
+    </style>
+</head>
+<body class="margin">
+    <div class="progress_tab">
+        <div class="_progress-bar">
+            <ul class="step-breadcrumb _list">
+                <li class="step-breadcrumb _item -current">
+                    <span class="step-breadcrumb _text">1. Login</span>
+                </li>
+                <li class="step-breadcrumb _item ">
+                    <span class="step-breadcrumb _text">2. Adress</span>
+                </li>
+                <li class="step-breadcrumb _item">
+                    <span class="step-breadcrumb _text">3. Pay</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    @using (Html.BeginForm("Login", "Cart", FormMethod.Post))
+    {
+        <div class="LoginLayout" style="margin-top:20px">
+            <div class="col-md-offset-3 col-md-5">Login</div>
+            <div class="row">
+                <div class="col-md-offset-3 col-md-5">
+                    <div class="input-group">
+                        <span class="input-group-btn glyphicon glyphicon-user">
+                        </span>
+                        @Html.TextBox("txtTen", null, new { @class = "form-control", placeholder = "Tên đăng nhập" })
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+            </div>
+            <div class="row">
+                <div class="col-md-offset-3 col-md-5">
+                    <div class="input-group">
+                        <span class="input-group-btn glyphicon glyphicon-lock">
+
+                        </span>
+                        @Html.Password("txtMatKhau", null, new { @class = "form-control", placeholder = "Mật khẩu" })
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+            </div>
+            <div class="row">
+                <div class="col-md-offset-4 col-md-6">
+                    <div class="input-group" style="padding-top:10px">
+                        <input type="submit" value="Đăng nhập" class="btn btn-primary" />
+                        @Html.ActionLink("Đăng kí tài khoản", "Register", "Cart")
+                    </div><!-- /input-group -->
+                </div><!-- /.col-lg-6 -->
+            </div>
+        </div>
+
+    }
+ </body>

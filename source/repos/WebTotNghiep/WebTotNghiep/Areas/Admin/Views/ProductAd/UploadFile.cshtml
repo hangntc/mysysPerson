@@ -1,0 +1,43 @@
+﻿
+@{
+    Layout = "~/Areas/Admin/Views/Shared/Layout_admin.cshtml";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>UploadImage</title>
+    <script src="Js/Upload.js"></script>
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js'></script>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <h2> Upload file to web api using Http Client</h2>
+    <div class="container">
+        <div>
+            @if (ViewBag.Success != null)
+            {
+                <div class="alert alert-success" role="alert">
+                    <strong>Well done !</strong> Successfully uploaded. <a href="@ViewBag.Success" target="_blank">open file</a>
+                </div>
+            }
+            else if (ViewBag.Failed != null)
+            {
+                <div class="alert alert-error" role="alert">
+                    <strong>Error !</strong> @ViewBag.Failed
+                </div>
+            }
+        </div>
+        @using (Html.BeginForm("UploadFile", "ProductAd", FormMethod.Post, new { role = "form", enctype = "multipart/form-data" }))
+        {
+            <div class="form-group">
+                <input type="file" id="file" name="file" />
+            </div>
+            <input type="submit" value="Submit" class="btn btn-default" />
+        }
+    </div>
+</body>
+</html>

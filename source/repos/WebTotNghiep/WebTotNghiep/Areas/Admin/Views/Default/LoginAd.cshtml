@@ -1,0 +1,76 @@
+﻿@model WebTotNghiep.Models.NguoiDung
+@{
+    Layout = null;
+}
+
+@{
+    if (Session["ms"] != null)
+    {
+        <div class="alert alert-warning" role="alert">
+            <span class="glyphicon glyphicon-exclamation-sign">
+                @Session["ms"].ToString()
+            </span>
+
+        </div>
+    }
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link href="~/Content/CSS/signin.css" rel="stylesheet" />
+    <style>
+        .margin1 {
+            margin-left: 180px;
+        }
+        .margin {
+            margin-top: 300px;
+        }
+
+        .input {
+            margin-left: 200px;
+        }
+    </style>
+</head>
+<body class="margin">
+    @using (Html.BeginForm("LoginAd", "Default", FormMethod.Post))
+    {
+        <div>
+            <form class="modal-content animate">
+                <div class="imgcontainer">
+                    <img src="~/img/logo/1.png" alt="Avatar" class="avatar" style="width:10%">
+                </div>
+                <div class="container">
+                    <h1>Login</h1>
+                    <p>Please login this form to from Page Administrators  .</p>
+                    <hr>
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                    <div class="input" for="uname"><b>Username</b></div>
+                    @Html.EditorFor(model => model.Username)
+                    <br />
+                    <div class="margin1">@Html.ValidationMessageFor(model => model.Username, "", new { @class = "text-danger" })</div>
+
+                    <div class="input"><b>Password</b></div>
+                    @Html.EditorFor(model => model.Password)
+                    <br />
+                    <div class="margin1">@Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })</div>
+
+                    <div class="w3-panel margin1" style="width:50%">
+                        <button class="w3-btn w3-block">
+                            <input type="submit" value="Sign In" class="w3-btn w3-block">
+                            <a href="~/Account/Logout">Close</a>
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script>
+            // Get the modal
+            var modal = document.getElementById('id01');
+        </script>
+    }
+</body>
+</html>

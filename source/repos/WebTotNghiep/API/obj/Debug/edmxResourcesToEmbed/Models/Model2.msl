@@ -1,0 +1,200 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLBHModelStoreContainer" CdmEntityContainer="QLBHEntities3">
+    <EntitySetMapping Name="BaiVietHeThongs">
+      <EntityTypeMapping TypeName="QLBHModel.BaiVietHeThong">
+        <MappingFragment StoreEntitySet="BaiVietHeThong">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="cCode" ColumnName="cCode" />
+          <ScalarProperty Name="cValue" ColumnName="cValue" />
+          <ScalarProperty Name="cLangID" ColumnName="cLangID" />
+          <ScalarProperty Name="cUpdateTime" ColumnName="cUpdateTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Chitietdonhangs">
+      <EntityTypeMapping TypeName="QLBHModel.Chitietdonhang">
+        <MappingFragment StoreEntitySet="Chitietdonhang">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="IdDonHang" ColumnName="IdDonHang" />
+          <ScalarProperty Name="Soluong" ColumnName="Soluong" />
+          <ScalarProperty Name="IdSP" ColumnName="IdSP" />
+          <ScalarProperty Name="Dongia" ColumnName="Dongia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Donhang_KhachHang">
+      <EntityTypeMapping TypeName="QLBHModel.Donhang_KhachHang">
+        <MappingFragment StoreEntitySet="Donhang_KhachHang">
+          <ScalarProperty Name="IdDonHang" ColumnName="IdDonHang" />
+          <ScalarProperty Name="Idkhachhang" ColumnName="Idkhachhang" />
+          <ScalarProperty Name="Ngaydat" ColumnName="Ngaydat" />
+          <ScalarProperty Name="Ngaygiao" ColumnName="Ngaygiao" />
+          <ScalarProperty Name="Yeucau" ColumnName="Yeucau" />
+          <ScalarProperty Name="Kieuthanhtoan" ColumnName="Kieuthanhtoan" />
+          <ScalarProperty Name="Trangthai" ColumnName="Trangthai" />
+          <ScalarProperty Name="Ngonngu" ColumnName="Ngonngu" />
+          <ScalarProperty Name="Duyet" ColumnName="Duyet" />
+          <ScalarProperty Name="Tennguoinhan" ColumnName="Tennguoinhan" />
+          <ScalarProperty Name="DTnguoinhan" ColumnName="DTnguoinhan" />
+          <ScalarProperty Name="EmailnguoiNhan" ColumnName="EmailnguoiNhan" />
+          <ScalarProperty Name="Diachinguoinhan" ColumnName="Diachinguoinhan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="HangSXes">
+      <EntityTypeMapping TypeName="QLBHModel.HangSX">
+        <MappingFragment StoreEntitySet="HangSX">
+          <ScalarProperty Name="IdHang" ColumnName="IdHang" />
+          <ScalarProperty Name="Mota" ColumnName="Mota" />
+          <ScalarProperty Name="Website" ColumnName="Website" />
+          <ScalarProperty Name="LienHe" ColumnName="LienHe" />
+          <ScalarProperty Name="UTien" ColumnName="UTien" />
+          <ScalarProperty Name="ThucThi" ColumnName="ThucThi" />
+          <ScalarProperty Name="NgonNgu" ColumnName="NgonNgu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="KhachHangs">
+      <EntityTypeMapping TypeName="QLBHModel.KhachHang">
+        <MappingFragment StoreEntitySet="KhachHang">
+          <ScalarProperty Name="IdKhachhang" ColumnName="IdKhachhang" />
+          <ScalarProperty Name="Tentruynhap" ColumnName="Tentruynhap" />
+          <ScalarProperty Name="Matkhau" ColumnName="Matkhau" />
+          <ScalarProperty Name="Tenkhachhang" ColumnName="Tenkhachhang" />
+          <ScalarProperty Name="Ngaysinh" ColumnName="Ngaysinh" />
+          <ScalarProperty Name="Gioitinh" ColumnName="Gioitinh" />
+          <ScalarProperty Name="Diachi" ColumnName="Diachi" />
+          <ScalarProperty Name="Dienthoai" ColumnName="Dienthoai" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Cauhoi" ColumnName="Cauhoi" />
+          <ScalarProperty Name="Traloi" ColumnName="Traloi" />
+          <ScalarProperty Name="Muc" ColumnName="Muc" />
+          <ScalarProperty Name="Ngaytao" ColumnName="Ngaytao" />
+          <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+          <ScalarProperty Name="Noidung" ColumnName="Noidung" />
+          <ScalarProperty Name="Thucthi" ColumnName="Thucthi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LoaiSanPhams">
+      <EntityTypeMapping TypeName="QLBHModel.LoaiSanPham">
+        <MappingFragment StoreEntitySet="LoaiSanPham">
+          <ScalarProperty Name="IdLoai" ColumnName="IdLoai" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="Tieude" ColumnName="Tieude" />
+          <ScalarProperty Name="Mota" ColumnName="Mota" />
+          <ScalarProperty Name="Uutien" ColumnName="Uutien" />
+          <ScalarProperty Name="Hinhanh" ColumnName="Hinhanh" />
+          <ScalarProperty Name="Tukhoa" ColumnName="Tukhoa" />
+          <ScalarProperty Name="Thucthi" ColumnName="Thucthi" />
+          <ScalarProperty Name="Vitri" ColumnName="Vitri" />
+          <ScalarProperty Name="Ngonngu" ColumnName="Ngonngu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus">
+      <EntityTypeMapping TypeName="QLBHModel.Menu">
+        <MappingFragment StoreEntitySet="Menu">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="TieuDe" ColumnName="TieuDe" />
+          <ScalarProperty Name="MoTa" ColumnName="MoTa" />
+          <ScalarProperty Name="Thutu" ColumnName="Thutu" />
+          <ScalarProperty Name="Trang" ColumnName="Trang" />
+          <ScalarProperty Name="ThuMuc" ColumnName="ThuMuc" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="LangID" ColumnName="LangID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NguoiDungs">
+      <EntityTypeMapping TypeName="QLBHModel.NguoiDung">
+        <MappingFragment StoreEntitySet="NguoiDung">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="QuangCaos">
+      <EntityTypeMapping TypeName="QLBHModel.QuangCao">
+        <MappingFragment StoreEntitySet="QuangCao">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="AdsName" ColumnName="AdsName" />
+          <ScalarProperty Name="AdsUrl" ColumnName="AdsUrl" />
+          <ScalarProperty Name="AdsImage" ColumnName="AdsImage" />
+          <ScalarProperty Name="LangID" ColumnName="LangID" />
+          <ScalarProperty Name="AdsIndex" ColumnName="AdsIndex" />
+          <ScalarProperty Name="AdsViewed" ColumnName="AdsViewed" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sanphams">
+      <EntityTypeMapping TypeName="QLBHModel.Sanpham">
+        <MappingFragment StoreEntitySet="Sanpham">
+          <ScalarProperty Name="MaSanPham" ColumnName="MaSanPham" />
+          <ScalarProperty Name="IdLoai" ColumnName="IdLoai" />
+          <ScalarProperty Name="Ten" ColumnName="Ten" />
+          <ScalarProperty Name="Model" ColumnName="Model" />
+          <ScalarProperty Name="MotaNgan" ColumnName="MotaNgan" />
+          <ScalarProperty Name="MotaChiTiet" ColumnName="MotaChiTiet" />
+          <ScalarProperty Name="TSKyThuat" ColumnName="TSKyThuat" />
+          <ScalarProperty Name="Tukhoa" ColumnName="Tukhoa" />
+          <ScalarProperty Name="IdHang" ColumnName="IdHang" />
+          <ScalarProperty Name="NgayNhap" ColumnName="NgayNhap" />
+          <ScalarProperty Name="NgayCapNhatCuoi" ColumnName="NgayCapNhatCuoi" />
+          <ScalarProperty Name="GiaCu" ColumnName="GiaCu" />
+          <ScalarProperty Name="GiaMoi" ColumnName="GiaMoi" />
+          <ScalarProperty Name="Uutien" ColumnName="Uutien" />
+          <ScalarProperty Name="ThucThi" ColumnName="ThucThi" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="HinhAnh1" ColumnName="HinhAnh1" />
+          <ScalarProperty Name="HinhAnh3" ColumnName="HinhAnh3" />
+          <ScalarProperty Name="HinhAnh4" ColumnName="HinhAnh4" />
+          <ScalarProperty Name="TieuBieu" ColumnName="TieuBieu" />
+          <ScalarProperty Name="Ngonngu" ColumnName="Ngonngu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Supports">
+      <EntityTypeMapping TypeName="QLBHModel.Support">
+        <MappingFragment StoreEntitySet="Support">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Nick" ColumnName="Nick" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="GroupSupportId" ColumnName="GroupSupportId" />
+          <ScalarProperty Name="Lang" ColumnName="Lang" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="QLBHModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tbvisistors">
+      <EntityTypeMapping TypeName="QLBHModel.tbvisistor">
+        <MappingFragment StoreEntitySet="tbvisistor">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="iuseronline" ColumnName="iuseronline" />
+          <ScalarProperty Name="ivisistor" ColumnName="ivisistor" />
+          <ScalarProperty Name="iuseronlinedate" ColumnName="iuseronlinedate" />
+          <ScalarProperty Name="dateonline" ColumnName="dateonline" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

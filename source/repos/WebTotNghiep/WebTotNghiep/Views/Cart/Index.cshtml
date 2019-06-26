@@ -1,0 +1,87 @@
+﻿@model IEnumerable<WebTotNghiep.Models.GioHang>
+@{
+    /**/
+
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<head>
+   
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src=" http://example.com/foobar/fonts/glyphicons-halflings-regular.woff"></script>
+
+    <style>
+        .margin {
+            margin-top: 300px;
+        }
+    </style>
+</head>
+<h1>
+          <span class="shopper"></span> Shopping Cart
+        </h1>
+    <body class="margin">
+        @using (Html.BeginForm("TinhLai", "Cart", FormMethod.Post))
+        {
+
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <td class="bg-primary">Mã sản phẩm</td>
+                        <td class="bg-success">Tên sản phẩm</td>
+                        <td class="bg-warning">Số lượng</td>
+                        <td class="bg-danger">Đơn giá</td>
+                        <td class="bg-info">Thành Tiền</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        if (Model != null)
+                        {
+                            var tongtien = 0.0;
+                            var thanhtien = 0;
+                            foreach (var item in Model)
+                            {
+                                thanhtien = (int)item.SoLuong * (int)item.Sanpham.GiaMoi;
+                                <tr>
+                                    <td>
+                                        <input type="hidden" name="id" id="id" value="@item.Sanpham.id" />
+                                    </td>
+                                    <td>@item.Sanpham.Ten</td>
+                                    <td>
+                                        <input style="max-width:100px; margin-left:0px;"  type="text" name="soluong" id="soluong" class="form-control" value="@item.SoLuong" />
+                                    </td>
+                                    <td>
+                                        <label class="txtDonGia">@item.Sanpham.GiaMoi</label>
+                                    </td>
+                                    <td>
+                                        <label class="ThanhTien" id="thanhtien">@thanhtien</label>
+                                    </td>
+                                </tr>
+                                tongtien = tongtien + thanhtien;
+                            }
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <input type="submit" value="Tính lại" class="btn btn-success" />
+                                    @Html.ActionLink("Thanh toán", "Pay", "Cart", new { @class = "btn btn-primary" })
+                                </td>
+                                <td>
+                                    Tổng tiền:
+                                </td>
+                                <td> @tongtien</td>
+                            </tr>
+                        }
+
+                    }
+                </tbody>
+
+            </table>
+
+     }
+        </body>
+
