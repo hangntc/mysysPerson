@@ -41,7 +41,7 @@
     "@nestjs/core": "5.5.0",
     "@nestjs/typeorm": "^6.1.1",
     "class-transformer": "^0.2.3",
-    "class-validator": "^0.9.1",
+    "class-validator": "^0.14.0",
     "core-js": "^2.5.4",
     "pg": "^7.11.0",
     "rxjs": "6.3.3",
